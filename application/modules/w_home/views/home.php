@@ -6,510 +6,208 @@
 <?php echo $this->session->flashdata('notif_keranjang')?>
 <?php echo $this->session->flashdata('notif_hapus_keranjang')?>
 <!-- SLIDER -->
-<div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
-    <?php
-    $query = $this->db->query("SELECT * FROM tbl_banner WHERE status='1'");
+<style type="text/css">
+    /* Background Image */
+    .bg-image--1 {
+        background-image: url(mode/images/bg/1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center; 
+    }
+    .bg-image--2 {
+      background-image: url(images/bg/2.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--3 {
+      background-image: url(images/bg/3.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--4 {
+      background-image: url(images/bg/4.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--5 {
+      background-image: url(images/bg/5.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--6 {
+      background-image: url(images/bg/6.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--7 {
+      background-image: url(images/bg/7.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--8 {
+      background-image: url(images/bg/8.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
+  .bg-image--9 {
+      background-image: url(images/bg/9.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; 
+  }
 
-    foreach ($query->result_array() as $row)
-    {
-    ?>    
-    <div class="slide animation__style10 fullscreen align__center--left" id="slide" style="background-image: url(<?= base_url().'assets/img/banner/'.$row['banner'];?>); background-repeat: no-repeat; background-position-x:center; background-position-y:91px; background-size: 100%;">
+</style>
+<div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
+    <!-- Start Single Slide -->
+    <div class="slide animation__style10 bg-image--1 fullscreen align__center--left">
         <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="slider__content">
-                            <div class="contentbox">
-                            <!-- <h2>Seragam <span>Pos </span></h2>
-                            <h2>Kini Hadir <span>Untuk Anda </span></h2>
-                            <a class="shopbtn" href="#">shop now</a> -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="slider__content">
+                        <div class="contentbox">
+                            <h2>Buy <span>your </span></h2>
+                            <h2>favourite <span>Product </span></h2>
+                            <h2>from <span>Here </span></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php } ?>
+    <!-- End Single Slide -->
 </div>
 <!-- END SLIDER -->
-
-<hr>
-
-<!-- PRODUK TERBARU -->
-<section class="wn__product__area brown--color pt--80  pb--30">
+<!-- NEW PRODUCT -->
+<section class="wn__product__area brown--color pt--80  pb--30" style="background-color: #000; color: #fff">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section__title text-center">
-                    <h2 class="title__be--2">Produk <span class="color--theme">Terbaru</span></h2>
-                    <p>Lihat Produk Terbaru Dari <b><?php echo $data2->nama_perusahaan ?></p></b>
+                    <h2 class="title__be--2">New <span class="color--theme">Product</span></h2>
+                    <p>View new product from <b><?php echo $data2->nama_perusahaan ?></p></b>
                 </div>
             </div>
         </div>
-        <!-- Start Single Tab Content -->
         <div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
-            <!-- Start Single Product -->
             <?php
-            $con=mysqli_connect("localhost","root","","db_seragampos");
+            $con=mysqli_connect("localhost","root","","db_catalog");
             if (mysqli_connect_errno())
             {
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
             }
-            $result = mysqli_query($con,"SELECT * FROM tbl_produk");
+            $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='1'");
 
             if(mysqli_num_rows($result)>0){
-                while($row = mysqli_fetch_array($result))
-                {
-                    ?>
-                    <div class="product product__style--3">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product__thumb">
-                                <!-- <a class="first__img" href="w_product/indexviewp?id=$row[id]"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a> -->
-                                <?php
-                                echo"
-                                <a class='first__img' href='w_product/index?id=$row[id]'>
-                                ";?>
-                                    <img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image">
-                                </a>
-                                <!-- <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a> -->
-                                <?php
-                                echo"
-                                <a class='second__img animation1' href='w_product/index?id=$row[id]'>
-                                ";?>
-                                    <img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image">
-                                </a>
-                            </div>
-                            <div class="product__content content--center">
-                                <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                <ul class="prize d-flex">
-                                    <li><?php echo buatRupiah($row['harga']); ?></li>
-                                    <?php 
-                                    if($row['diskon']==0){
-                                        echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                    }else{
-                                        ?>
-                                        <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                    <?php } ?>
-                                </ul>
-                                <!-- <div class="action">
-                                    <div class="actions_inner">
-                                        <ul class="add_to_links">
-                                            <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                            <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                            <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                            <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product__hover--content">
-                                    <ul class="rating d-flex">
-                                        <li class="on"><i class="fa fa-star-o"></i></li>
-                                        <li class="on"><i class="fa fa-star-o"></i></li>
-                                        <li class="on"><i class="fa fa-star-o"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                        <li><i class="fa fa-star-o"></i></li>
-                                    </ul>
-                                </div> -->
-                            </div>
+                while($row = mysqli_fetch_array($result)){ 
+            ?>
+                <div class="product product__style--3">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                        <div class="product__thumb">
+                            <?php echo"<a class='first__img' href='w_product/index?id=$row[id]'>";?><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
+                            <?php echo" <a class='second__img animation1' href='w_product/index?id=$row[id]'>";?><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
+                        </div>
+                        <div class="product__content content--center">
+                            <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
+                            <ul class="prize d-flex">
+                                <li><?php echo buatRupiah($row['harga']); ?></li>
+                                <?php 
+                                if($row['diskon']==0){
+                                    echo "<li><small><i><font style='font-family:roboto; color:#fff;'> normal price</font></i></small></li>";
+                                }else{ ?>
+                                    <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
+                                <?php } ?>
+                            </ul>
                         </div>
                     </div>
+                </div>
             <?php } } mysqli_close($con); ?>
-            <!-- Start Single Product -->
         </div>
-        <!-- End Single Tab Content -->
     </div>
 </section>
-<!-- END PRODUK TERBARU -->
+<!-- END NEW PRODUCT -->
 
-<!-- SEMUA PRODUK -->
-<section class="wn__bestseller__area bg--white pt--80  pb--30 hero">
-	<div class="cube"></div>
-	<div class="cube"></div>
-	<div class="cube"></div>
-	<div class="cube"></div>
-	<div class="cube"></div>
-	<div class="cube"></div>
+<!-- VIEW ALL PRODUCT -->
+<section class="wn__product__area brown--color pt--80  pb--30" style="background-color: #000; color: #fff">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section__title text-center">
-                    <h2 class="title__be--2">Semua <span class="color--theme">Produk</span></h2>
-                    <p>Lihat Semua Produk Dari <b><?php echo $data2->nama_perusahaan ?></p></b>
+                    <h2 class="title__be--2">All <span class="color--theme">Product</span></h2>
+                    <p>View all product from <b><?php echo $data2->nama_perusahaan ?></p></b>
                 </div>
             </div>
         </div>
-        <div class="row mt--50">
-            <div class="col-md-12 col-lg-12 col-sm-12">
-                <div class="product__nav nav justify-content-center" role="tablist">
-                    <a class="nav-item nav-link active" data-toggle="tab" href="#nav-kemeja" role="tab">KEMEJA</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-kaos" role="tab">KAOS</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-jaket" role="tab">JAKET</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-polo" role="tab">POLO</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-celana" role="tab">CELANA</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-aksesories" role="tab">AKSESORIES</a>
-                </div>
-            </div>
-        </div>
-        <div class="tab__container mt--60">
-            <!-- KEMEJA -->
-            <div class="row single__tab tab-pane fade show active" id="nav-kemeja" role="tabpanel">
-                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                    <!-- Start Single Product -->
-                    <?php
-                    $con=mysqli_connect("localhost","root","","db_seragampos");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
-                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='1' ");
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                            <div class="product product__style--3">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="#"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
-                                        <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                        <ul class="prize d-flex">
-                                            <li><?php echo buatRupiah($row['harga']); ?></li>
-                                            <?php 
-                                            if($row['diskon']==0){
-                                                echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                            }else{
-                                                ?>
-                                                <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                            <?php } ?>
-                                        </ul>
-                                        <!-- <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                    <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                    <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__hover--content">
-                                            <ul class="rating d-flex">
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div> -->
+        <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg" style="background-color: #000; color: #fff">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 order-1 order-lg-2">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
+                                    <div class="shop__list nav justify-content-center" role="tablist">
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
                                     </div>
                                 </div>
                             </div>
-                    <?php } } mysqli_close($con); ?>
-                    <!-- Start Single Product -->
-                </div>
-            </div>
-            <!-- KAOS -->
-            <div class="row single__tab tab-pane fade" id="nav-kaos" role="tabpanel">
-                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                    <!-- Start Single Product -->
-                    <?php
-                    $con=mysqli_connect("localhost","root","","db_seragampos");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
-                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='2' ");
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                            <div class="product product__style--3">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="#"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
-                                        <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                        <ul class="prize d-flex">
-                                            <li><?php echo buatRupiah($row['harga']); ?></li>
-                                            <?php 
-                                            if($row['diskon']==0){
-                                                echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                            }else{
-                                                ?>
-                                                <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                            <?php } ?>
-                                        </ul>
-                                        <!-- <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                    <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                    <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
+                        </div>
+                        <div class="tab__container">
+                            <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
+                                <div class="row">
+                                    <!-- Start Single Product -->
+                                    <?php
+                                    $con=mysqli_connect("localhost","root","","db_catalog");
+                                    if (mysqli_connect_errno())
+                                    {
+                                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                    }
+                                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='6'");
+
+                                    if(mysqli_num_rows($result)>0){
+                                        while($row = mysqli_fetch_array($result)){ 
+                                    ?>
+                                    <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
+                                        <div class="product__thumb">
+                                            <?php echo"<a class='first__img' href='w_product/index?id=$row[id]'>";?><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
+                                            <?php echo" <a class='second__img animation1' href='w_product/index?id=$row[id]'>";?><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
+                                        </div>
+                                        <div class="product__content content--center">
+                                            <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
+                                            <ul class="prize d-flex">
+                                                <li><?php echo buatRupiah($row['harga']); ?></li>
+                                                <?php 
+                                                if($row['diskon']==0){
+                                                    echo "<li><small><i><font style='font-family:roboto; color:#fff;'> normal price</font></i></small></li>";
+                                                }else{ ?>
+                                                    <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
+                                                <?php } ?>
+                                            </ul>
+                                            <div class="product__hover--content">
+                                                <ul class="rating d-flex">
+                                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="product__hover--content">
-                                            <ul class="rating d-flex">
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div> -->
                                     </div>
+                                    <?php } } mysqli_close($con); ?>
+                                    <!-- End Single Product -->
                                 </div>
                             </div>
-                    <?php } } mysqli_close($con); ?>
-                    <!-- Start Single Product -->
-                </div>
-            </div>
-            <!-- JAKET -->
-            <div class="row single__tab tab-pane fade" id="nav-jaket" role="tabpanel">
-                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                    <!-- Start Single Product -->
-                    <?php
-                    $con=mysqli_connect("localhost","root","","db_seragampos");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
-                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='3' ");
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                            <div class="product product__style--3">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="#"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
-                                        <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                        <ul class="prize d-flex">
-                                            <li><?php echo buatRupiah($row['harga']); ?></li>
-                                            <?php 
-                                            if($row['diskon']==0){
-                                                echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                            }else{
-                                                ?>
-                                                <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                            <?php } ?>
-                                        </ul>
-                                        <!-- <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                    <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                    <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__hover--content">
-                                            <ul class="rating d-flex">
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                    <?php } } mysqli_close($con); ?>
-                    <!-- Start Single Product -->
-                </div>
-            </div>
-            <!-- POLO -->
-            <div class="row single__tab tab-pane fade" id="nav-polo" role="tabpanel">
-                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                    <!-- Start Single Product -->
-                    <?php
-                    $con=mysqli_connect("localhost","root","","db_seragampos");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
-                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='4' ");
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                            <div class="product product__style--3">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="#"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
-                                        <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                        <ul class="prize d-flex">
-                                            <li><?php echo buatRupiah($row['harga']); ?></li>
-                                            <?php 
-                                            if($row['diskon']==0){
-                                                echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                            }else{
-                                                ?>
-                                                <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                            <?php } ?>
-                                        </ul>
-                                        <!-- <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                    <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                    <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__hover--content">
-                                            <ul class="rating d-flex">
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                    <?php } } mysqli_close($con); ?>
-                    <!-- Start Single Product -->
-                </div>
-            </div>
-            <!-- CELANA -->
-            <div class="row single__tab tab-pane fade" id="nav-celana" role="tabpanel">
-                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                    <!-- Start Single Product -->
-                    <?php
-                    $con=mysqli_connect("localhost","root","","db_seragampos");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
-                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='5' ");
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                            <div class="product product__style--3">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="#"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
-                                        <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                        <ul class="prize d-flex">
-                                            <li><?php echo buatRupiah($row['harga']); ?></li>
-                                            <?php 
-                                            if($row['diskon']==0){
-                                                echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                            }else{
-                                                ?>
-                                                <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                            <?php } ?>
-                                        </ul>
-                                        <!-- <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                    <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                    <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__hover--content">
-                                            <ul class="rating d-flex">
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                    <?php } } mysqli_close($con); ?>
-                    <!-- Start Single Product -->
-                </div>
-            </div>
-            <!-- AKSESOIRIES -->
-            <div class="row single__tab tab-pane fade" id="nav-aksesories" role="tabpanel">
-                <div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-                    <!-- Start Single Product -->
-                    <?php
-                    $con=mysqli_connect("localhost","root","","db_seragampos");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
-                    $result = mysqli_query($con,"SELECT * FROM tbl_produk WHERE kd_kategori='6' ");
-                    
-                    if(mysqli_num_rows($result)>0){
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                            <div class="product product__style--3">
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="#"><img src="<?php echo base_url().'assets/img/produk/cover/'.$row['cover'];?>" alt="product image"></a>
-                                        <a class="second__img animation1" href="#"><img src="<?php echo base_url('assets/img/produk/cover/dua.png');?>" alt="product image"></a>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html"><?php echo $row['nama_produk']; ?></a></h4>
-                                        <ul class="prize d-flex">
-                                            <li><?php echo buatRupiah($row['harga']); ?></li>
-                                            <?php 
-                                            if($row['diskon']==0){
-                                                echo "<li><small><i><font style='font-family:roboto; color:black;'> Harga Normal</font></i></small></li>";
-                                            }else{
-                                                ?>
-                                                <li class="old_prize"><?php echo buatRupiah($row['diskon']); ?></li>
-                                            <?php } ?>
-                                        </ul>
-                                        <!-- <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                    <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                    <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal<?php echo $row['id'];?>"><i class="bi bi-search"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product__hover--content">
-                                            <ul class="rating d-flex">
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li class="on"><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div> -->
-                                    </div>
-                                </div>
-                            </div>
-                    <?php } } mysqli_close($con); ?>
-                    <!-- Start Single Product -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- END VIEW ALL PRODUCT -->

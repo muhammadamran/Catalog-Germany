@@ -103,7 +103,7 @@ preview-1
 	text-indent: -9999px;
 	width:18px;
 	line-height: 8px;
-	background: #3c3c3c;
+	background: #fff;
 	cursor: pointer;
 	position: relative;
 	z-index: 9;
@@ -208,7 +208,7 @@ preview-2
 	text-indent: -9999px;
 	width:18px;
 	line-height: 8px;
-	background: #3c3c3c;
+	background: #fff;
 	cursor: pointer;
 	position: relative;
 	z-index: 9;

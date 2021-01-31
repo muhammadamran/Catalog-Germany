@@ -11,7 +11,7 @@
 	</div>
 	<div class="row">
 		<!-- begin col-3 -->
-		<div class="col-xl-3 col-md-6">
+		<!-- <div class="col-xl-3 col-md-6">
 			<div class="widget widget-stats bg-blue">
 				<div class="stats-icon"><i class="fa fa-shopping-cart"></i></div>
 				<div class="stats-info">
@@ -22,14 +22,14 @@
 					<a href="pesanan">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- end col-3 -->
 		<!-- begin col-3 -->
-		<div class="col-xl-3 col-md-6">
+		<div class="col-xl-4 col-md-6">
 			<div class="widget widget-stats bg-info">
 				<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 				<div class="stats-info">
-					<h4>Produk</h4>
+					<h4>Product</h4>
 					<p><?php echo $produk[0]->produk ?></p>	
 				</div>
 				<div class="stats-link">
@@ -39,11 +39,11 @@
 		</div>
 		<!-- end col-3 -->
 		<!-- begin col-3 -->
-		<div class="col-xl-3 col-md-6">
+		<div class="col-xl-4 col-md-6">
 			<div class="widget widget-stats bg-orange">
 				<div class="stats-icon"><i class="fa fa-eye"></i></div>
 				<div class="stats-info">
-					<h4>Kritik & Saran</h4>
+					<h4>Criticism & Suggestions</h4>
 					<p><?php echo $krisar[0]->krisar ?></p>	
 				</div>
 				<div class="stats-link">
@@ -53,11 +53,11 @@
 		</div>
 		<!-- end col-3 -->
 		<!-- begin col-3 -->
-		<div class="col-xl-3 col-md-6">
+		<div class="col-xl-4 col-md-6">
 			<div class="widget widget-stats bg-red">
 				<div class="stats-icon"><i class="fa fa-users"></i></div>
 				<div class="stats-info">
-					<h4>Member</h4>
+					<h4>Members</h4>
 					<p><?php echo $member[0]->member ?></p>	
 				</div>
 				<div class="stats-link">

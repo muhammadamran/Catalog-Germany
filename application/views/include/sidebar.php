@@ -26,7 +26,7 @@
 			</li>
 		</ul>
 		<ul class="nav">
-			<li class="nav-header">NAVIGASI</li>
+			<li class="nav-header">NAVIGATION</li>
 			<li class="<?php echo $this->uri->segment(1) == "home" ? "active" : ""; ?> has-sub">
 				<a href="<?php echo base_url('home'); ?>">
 					<i class="fa fa-th-large"></i>
@@ -38,14 +38,14 @@
 				<a href="javascript:;">
 					<b class="caret"></b>
 					<i class="fas fa-archive"></i>
-					<span>Produk</span>
+					<span>Product</span>
 				</a>
 				<ul class="sub-menu">
-					<li class="<?php echo $this->uri->segment(1) == "produk" ? "active" : ""; ?>"><a href="produk">Produk</a></li>
+					<li class="<?php echo $this->uri->segment(1) == "produk" ? "active" : ""; ?>"><a href="produk">Product</a></li>
 				</ul>
 			</li>
 
-			<li class="<?php echo $this->uri->segment(1) == "pesanan" ? "active" : ""; ?> has-sub">
+			<!-- <li class="<?php echo $this->uri->segment(1) == "pesanan" ? "active" : ""; ?> has-sub">
 				<a href="javascript:;">
 					<b class="caret"></b>
 					<i class="fas fa-paper-plane"></i>
@@ -54,9 +54,9 @@
 				<ul class="sub-menu">
 					<li class="<?php echo $this->uri->segment(1) == "pesanan" ? "active" : ""; ?>"><a href="pesanan">Pesanan</a></li>
 				</ul>
-			</li>
+			</li> -->
 
-			<li class="<?php echo $this->uri->segment(1) == "kategori" ? "active" : ""; ?> has-sub">
+			<!-- <li class="<?php echo $this->uri->segment(1) == "kategori" ? "active" : ""; ?> has-sub">
 				<a href="javascript:;">
 					<b class="caret"></b>
 					<i class="fas fa-list"></i>
@@ -65,20 +65,20 @@
 				<ul class="sub-menu">
 					<li class="<?php echo $this->uri->segment(1) == "kategori" ? "active" : ""; ?>"><a href="kategori">Kategori</a></li>
 				</ul>
-			</li>
+			</li> -->
 
 			<li class="<?php echo $this->uri->segment(1) == "krisar" ? "active" : ""; ?> has-sub">
 				<a href="javascript:;">
 					<b class="caret"></b>
 					<i class="fas fa-sticky-note"></i>
-					<span>Kritik & Saran</span>
+					<span>Criticism & Suggestions</span>
 				</a>
 				<ul class="sub-menu">
-					<li class="<?php echo $this->uri->segment(1) == "krisar" ? "active" : ""; ?>"><a href="krisar">Kritik & Saran</a></li>
+					<li class="<?php echo $this->uri->segment(1) == "krisar" ? "active" : ""; ?>"><a href="krisar">Criticism & Suggestions</a></li>
 				</ul>
 			</li>
 
-			<li class="nav-header">PENGATURAN</li>
+			<li class="nav-header">SETTINGS</li>
 			<li class="<?php echo $this->uri->segment(1) == "banner" ? "active" : ""; ?> has-sub">
 				<a href="<?php echo base_url('banner'); ?>">
 					<i class="icon-picture"></i>
@@ -89,11 +89,11 @@
 				<li class="<?php echo $this->uri->segment(1) == "perusahaan" ? "active" : ""; ?> has-sub">
 					<a href="<?php echo base_url('perusahaan'); ?>">
 						<i class="fa fa-building"></i>
-						<span>Perusahaan</span>
+						<span>Company</span>
 					</a>
 				</li>
 				<li class="<?php echo $this->uri->segment(1) == "pengguna" ? "active" : ""; ?>">
-					<a href="<?php echo base_url('pengguna'); ?>"><i class="fa fa-users"></i> <span>Pengguna</span></a>
+					<a href="<?php echo base_url('pengguna'); ?>"><i class="fa fa-users"></i> <span>User</span></a>
 				</li>
 			<?php } ?>
 

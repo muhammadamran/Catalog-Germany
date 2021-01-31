@@ -66,7 +66,7 @@ class W_home extends CI_Controller {
 
 				$this->session->set_userdata($data_session);
 				$this->home_model->input_log('tbl_log', $data_log);
-                $this->session->set_flashdata('notif_login_berhasil', '<script>alert("Hai, Anda Berhasil Login, Silahkan Kunjungi dan Pesan Produk Kami.");window.history.go(-1);</script>');
+                $this->session->set_flashdata('notif_login_berhasil', '<script>alert("Hi, you have successfully logged in, please visit and order our products.");window.history.go(-1);</script>');
 				redirect('w_home/index');
 			}else{
                 $this->session->set_flashdata('notif_login_gagal', '<script>alert("Maaf Email atau Password Anda Salah, Silahkan Coba Lagi.");window.history.go(-1);</script>');

@@ -5,20 +5,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $data->nama_perusahaan; ?> | &copy; Offical Website </title>
-	<link rel="shortcut icon" href="<?php echo base_url().'assets/img/logo/'.$data->logo;?>">
+	<title><?= $data->nama_perusahaan; ?> | &copy; Offical Website </title>
+	<link rel="shortcut icon" href="<?= base_url().'assets/img/logo/'.$data->logo;?>">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
-	<link rel="stylesheet" href="<?php echo base_url('mode/css/bootstrap.min.css');?>">
-	<link rel="stylesheet" href="<?php echo base_url('mode/css/plugins.css');?>">
-	<link rel="stylesheet" href="<?php echo base_url('mode/style.css');?>">
-	<link rel="stylesheet" href="<?php echo base_url('mode/css/custom.css');?>">
-	<script src="<?php echo base_url('mode/js/vendor/modernizr-3.5.0.min.js');?>"></script>
+	<link rel="stylesheet" href="<?= base_url('mode/css/bootstrap.min.css');?>">
+	<link rel="stylesheet" href="<?= base_url('mode/css/plugins.css');?>">
+	<link rel="stylesheet" href="<?= base_url('mode/style.css');?>">
+	<link rel="stylesheet" href="<?= base_url('mode/css/custom.css');?>">
+	<script src="<?= base_url('mode/js/vendor/modernizr-3.5.0.min.js');?>"></script>
 	<!-- PRELOADER -->
   <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
   <!-- HITUNG -->
-  
 </head>
 <style>
 .logo-tp {
@@ -54,7 +53,7 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background-color: #fff;
+  background-color: #000;
 }
 .preloader .loading {
   position: absolute;
@@ -77,14 +76,14 @@
   left: 45vw;
   width: 10px;
   height: 10px;
-  border: solid 1px #ea6024;;
+  border: solid 1px #c8a587;;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   -webkit-animation: cube 12s ease-in forwards infinite;
           animation: cube 12s ease-in forwards infinite;
 }
 .cube:nth-child(2n) {
-  border-color: #ea602470;
+  border-color: #c8a58770;
 }
 .cube:nth-child(2) {
   -webkit-animation-delay: 2s;
@@ -171,8 +170,8 @@
 
 .kelas:hover {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border-color: #ea6024;
-  color: #ea6024; 
+  border-color: #c8a587;
+  color: #c8a587; 
 }
 
 .logo-inv {
@@ -230,15 +229,15 @@
 </style>
 <?php
 function buatRupiah($angka){
-	$hasil = "Rp. " . number_format($angka);
+	$hasil = "USD$. " . number_format($angka);
 	return $hasil;
 }
 ?>
-<div class="preloader">
+<div class="preloader" align="center" style="color: #fff">
 	<div class="loading">
-		<img src="<?php echo base_url('assets/img/all/logo_5f6767888f041.png');?>" width="100">
+		<img src="<?= base_url().'assets/img/logo/'.$data->logo;?>" width="100">
 		<br>
-		<p><b><font style="font-family: 'Poppins', sans-serif; color:#1e3135">SERAGAM</font><font style="font-family: 'Poppins', sans-serif; color:#ea6024">POS&nbsp;</font>...</b></p>
+		<p><b><font style="font-family: 'Poppins', sans-serif;"><?= $data->nama_perusahaan; ?> </font><font style="font-family: 'Poppins', sans-serif;">&nbsp;</font>...</b></p>
 	</div>
 </div>
 <body id="WAButton">

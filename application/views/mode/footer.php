@@ -1,13 +1,13 @@
 		<hr>
-		<section class="wn__newsletter__area" style="background-color: #ea6024;">
+		<section class="wn__newsletter__area" style="background-color: #c8a587;">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
 						<div class="section__title text-center">
-							<h2>Tetaplah bersama kami</h2>
+							<h2 style="color: #000">Stay with us</h2>
 						</div>
 						<div class="newsletter__block text-center">
-							<p>Berlangganan buletin kami sekarang dan ikuti perkembangan terbaru dengan koleksi baru, lookbook terbaru, dan penawaran eksklusif.</p>
+							<p>Subscribe to our newsletter now and keep up with the latest developments with new collections, the latest lookbooks and exclusive offers.</p>
 							<form action="#">
 								<div class="newsletter__box">
 									<input type="email" placeholder="Enter your e-mail">
@@ -20,7 +20,7 @@
 			</div>
 		</section>
 		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-			<div class="footer-static-top" style="background-color: #868e96;">
+			<div class="footer-static-top" style="background-color: #000; color: #fff">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
@@ -35,15 +35,15 @@
 								<br>
 								<div class="footer__content">
 									<div align="center">
-										<label>Kunjungi juga sosial media kami dibawah ini</label>
+										<label>Visit our social media below</label>
 									</div>
 									<ul class="social__net social__net--2 d-flex justify-content-center">
-										<!-- <li><a href="#"><i class="bi bi-facebook"></i></a></li> -->
-										<li><a href="<?php echo $data->link_fb; ?>" target="_blank"><img src="<?php echo base_url('mode/images/icons/facebook.png');?>" class="gambar-icon"></a></li>
-										<!-- <li><a href="#"><i class="bi bi-google"></i></a></li> -->
-										<li><a href="<?php echo $data->link_instagram; ?>" target="_blank"><img src="<?php echo base_url('mode/images/icons/instagram.png');?>" class="gambar-icon"></a></li>
-										<!-- <li><a href="#"><i class="bi bi-twitter"></i></a></li> -->
-										<li><a href="<?php echo $data->link_twitter; ?>" target="_blank"><img src="<?php echo base_url('mode/images/icons/twitter.png');?>" class="gambar-icon"></a></li>
+										<li><a href="#"><i class="bi bi-facebook"></i></a></li>
+										<!-- <li><a href="<?php echo $data->link_fb; ?>" target="_blank"><img src="<?php echo base_url('mode/images/icons/facebook.png');?>" class="gambar-icon"></a></li> -->
+										<li><a href="#"><i class="bi bi-google"></i></a></li>
+										<!-- <li><a href="<?php echo $data->link_instagram; ?>" target="_blank"><img src="<?php echo base_url('mode/images/icons/instagram.png');?>" class="gambar-icon"></a></li> -->
+										<li><a href="#"><i class="bi bi-twitter"></i></a></li>
+										<!-- <li><a href="<?php echo $data->link_twitter; ?>" target="_blank"><img src="<?php echo base_url('mode/images/icons/twitter.png');?>" class="gambar-icon"></a></li> -->
 									</ul>
 								</div>
 							</div>
@@ -83,7 +83,7 @@
 												<h2 class="contact__title">Notifikasi</h2>
 												<table>
 													<!-- <?php
-													$con=mysqli_connect("localhost","root","","db_seragampos");
+													$con=mysqli_connect("localhost","root","","db_catalog");
 													if (mysqli_connect_errno())
 													{
 														echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -169,13 +169,13 @@
 										<div class="col-lg-12 col-12">
 											<div class="contact-form-wrap">
 												<h2 class="contact__title">Sign In</h2>
-												<p>Silahkan masukkan email dan password yang anda sudah buat. </p>
+												<p>Please email name and password that you have created. </p>
 												<form action="<?= base_url('w_home/aksi_login');?>" method="post">
 													<div class="single-contact-form space-between">
 														<input type="email" name="username" placeholder="Email*">
 														<input type="password" name="password" placeholder="Password*">
 													</div>
-													<p>Silahkan <font style="color:#ce7852"><a data-toggle="modal" title="Create An Account" href="#daftar"><b>CREATE AN ACCOUNT</b></a></font> Jika Belum Memiliki Akun</p>
+													<p>Please <font style="color:#caae8f"><a data-toggle="modal" title="Create An Account" href="#daftar"><b>CREATE AN ACCOUNT</b></a></font> If you don't have an account</p>
 													<div class="contact-btn">
 														<button type="submit" name="submit">Sign In</button>
 													</div>
@@ -204,11 +204,11 @@
 										<div class="col-lg-12 col-12">
 											<div class="contact-form-wrap">
 												<h2 class="contact__title">Create An Account</h2>
-												<p>Silahkan Create An Account anda disini dan akan aktif sebagai member untuk melakukan pemesanan. </p>
+												<p>Please Create Your Account here and will be active as a member to place an order. </p>
 												<form action="<?= base_url('w_home/create_account');?>" method="post">
 													<div class="single-contact-form space-between">
-														<input type="text" name="nama_depan" placeholder="Nama Depan*">
-														<input type="text" name="nama_belakang" placeholder="Nama Belakang*">
+														<input type="text" name="nama_depan" placeholder="First Name*">
+														<input type="text" name="nama_belakang" placeholder="Last Name*">
 													</div>
 													<div class="single-contact-form space-between">
 														<input type="email" name="email" placeholder="Email*">
@@ -216,13 +216,13 @@
 													</div>
 													<div class="single-contact-form space-between">
 														<input type="password" name="password" id="password" data-toggle="password" placeholder="Password*">
-														<input type="password" name="password" id="konfirmasi_password" placeholder="Konfirmasi Password*">
+														<input type="password" name="password" id="konfirmasi_password" placeholder="Confirm Password*">
 														<input type="hidden" name="role" value="Member">
 														<input type="hidden" name="status" value="1">
 														<input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:m:i') ?>">
 													</div>
 													<div class="contact-btn">
-														<p>Silahkan <font style="color:#ce7852"><a data-toggle="modal" title="Create An Account" href="#daftar"><b>SIGN IN</b></a></font> Jika Sudah Memiliki Akun</p>
+														<p>Silahkan <font style="color:#caae8f"><a data-toggle="modal" title="Create An Account" href="#daftar"><b>SIGN IN</b></a></font> If you already have an account</p>
 														<button type="submit">Create An Account</button>
 													</div>
 												</form>
@@ -240,7 +240,7 @@
 			</div>
 			<!-- END DAFTAR -->
 			<?php
-                $con=mysqli_connect("localhost","root","","db_seragampos");
+                $con=mysqli_connect("localhost","root","","db_catalog");
                 if (mysqli_connect_errno())
                 {
                     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -364,7 +364,7 @@
 		}
 	</style>
 	<div class="mybuttonWA">
-	<a class="buttonWA" href="https://api.whatsapp.com/send?phone=<?= $data->no_telpon;?>&amp;text=Konfirmasi%20Pembayaran%3A%0ANo.Invoice%3A%0ANama%20Pemesan%3A%0AAlamat%3A%0ANo.%20Hp%3A%0AEmail%3A%0ATotal%20Bayar%3A" rel="nofollow" target="_blank"><i class="fa fa-whatsapp"> </i> WhatsApp</a></div>
+	<a class="buttonWA" href="https://api.whatsapp.com/send?phone=<?= $data->no_telpon;?>&amp;text=Hallo" rel="nofollow" target="_blank"><i class="fa fa-whatsapp"> </i> WhatsApp</a></div>
 	<!-- <script type="text/javascript">
 		(function () {
 			var options = {

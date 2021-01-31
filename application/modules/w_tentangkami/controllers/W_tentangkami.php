@@ -34,7 +34,7 @@ class W_tentangkami extends CI_Controller {
 		);
         
         $this->tentangkami_model->input_create('tbl_kritiksaran', $data);
-        $this->session->set_flashdata('notif_kritiksaran', '<script>alert("Hai, Terimakasih Sudah Memberikan Kritik & Saran Anda, Kami akan berusaha untuk menjadi lebih baik.");window.history.go(-1);</script>');
+        $this->session->set_flashdata('notif_kritiksaran', '<script>alert("Hi, Thank you for giving your criticism & suggestions, we will try to be better.");window.history.go(-1);</script>');
         redirect('w_tentangkami/index');
 	}
  
